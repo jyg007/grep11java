@@ -1,0 +1,5 @@
+mvn dependency:build-classpath -Dmdep.outputFile=cp.txt
+mvn compile
+java -cp "target/classes:$(cat cp.txt)" com.ibm.crypto.grep11.grpc.GenerateAESKey localhost 9876
+java -cp "target/classes:$(cat cp.txt)" com.ibm.crypto.grep11.grpc.GetMech localhost 9876
+
