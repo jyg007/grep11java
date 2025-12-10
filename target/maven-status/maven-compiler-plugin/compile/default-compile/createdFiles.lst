@@ -219,6 +219,7 @@ com/ibm/crypto/grep11/grpc/BTCDeriveParmOrBuilder.class
 com/ibm/crypto/grep11/grpc/UnwrapKeyResponse$Builder.class
 com/ibm/crypto/grep11/grpc/SignUpdateResponse$Builder.class
 com/ibm/crypto/grep11/grpc/DigestRequest$Builder.class
+com/ibm/crypto/grep11/grpc/GenerateKeyPair.class
 com/ibm/crypto/grep11/grpc/ReencryptSingleResponse$1.class
 com/ibm/crypto/grep11/grpc/VerifyFinalResponseOrBuilder.class
 com/ibm/crypto/grep11/grpc/DigestSingleResponse$Builder.class
@@ -377,6 +378,7 @@ com/ibm/crypto/grep11/grpc/SignUpdateRequestOrBuilder.class
 com/ibm/crypto/grep11/grpc/KyberKEMParm$KyberMode$1.class
 com/ibm/crypto/grep11/grpc/ECAGGParm$ECAGGMode.class
 com/ibm/crypto/grep11/grpc/EncryptSingleResponse$1.class
+com/ibm/crypto/grep11/grpc/GenerateKeyPair$1.class
 com/ibm/crypto/grep11/grpc/CryptoGrpc$CryptoBlockingStub.class
 com/ibm/crypto/grep11/grpc/GetAttributeValueResponse$Builder.class
 com/ibm/crypto/grep11/grpc/SignInitResponseOrBuilder.class
@@ -393,6 +395,7 @@ com/ibm/crypto/grep11/grpc/CryptoGrpc$AsyncService.class
 com/ibm/crypto/grep11/grpc/SignUpdateResponse.class
 com/ibm/crypto/grep11/grpc/GetAttributeValueRequest.class
 com/ibm/crypto/grep11/grpc/SignUpdateResponse$1.class
+com/ibm/crypto/grep11/grpc/GenerateKeyPair$KeyType.class
 com/ibm/crypto/grep11/grpc/DigestKeyRequestOrBuilder.class
 com/ibm/crypto/grep11/grpc/AttributeValue.class
 com/ibm/crypto/grep11/grpc/DecryptFinalResponse$Builder.class

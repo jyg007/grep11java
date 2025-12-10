@@ -54,6 +54,19 @@
       <artifactId>javax.annotation-api</artifactId>
       <version>1.3.2</version>
     </dependency>
+    <!-- Bouncy Castle Provider (crypto algorithms) -->
+    <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk18on</artifactId>
+        <version>1.78.1</version>
+    </dependency>
+
+    <!-- Bouncy Castle PKIX/ASN1 support -->
+    <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcpkix-jdk18on</artifactId>
+        <version>1.78.1</version>
+    </dependency>
   </dependencies>
 
   <build>
