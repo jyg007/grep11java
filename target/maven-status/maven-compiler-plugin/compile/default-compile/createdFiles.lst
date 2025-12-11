@@ -78,6 +78,7 @@ com/ibm/crypto/grep11/grpc/DecryptFinalRequest.class
 com/ibm/crypto/grep11/grpc/DecryptResponse.class
 com/ibm/crypto/grep11/grpc/UnwrapKeyResponseOrBuilder.class
 com/ibm/crypto/grep11/grpc/ECDH1DeriveParm$KeyDerivationFunction$1.class
+com/ibm/crypto/grep11/grpc/Example2$UnwrappedKey.class
 com/ibm/crypto/grep11/grpc/EncryptResponse$Builder.class
 com/ibm/crypto/grep11/grpc/DigestInitRequest$1.class
 com/ibm/crypto/grep11/grpc/VerifyFinalRequest$Builder.class
