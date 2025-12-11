@@ -1,3 +1,11 @@
+# Grep 11 Java examples
+
+These examples are designed to run on IBM LinuxONE or IBM Systems Z with Linux using a GREP11 service with no mTLS authentication.
+This setup is specifically suited for applications running in a pod or a Docker Compose environment, such as those deployed with the IBM Hyper Protect Runtime.
+Developers can also use such environment and samples for their ease of installation.
+
+# HowTo
+
 mvn dependency:build-classpath -Dmdep.outputFile=cp.txt
 mvn compile
 java -cp "target/classes:$(cat cp.txt)" com.ibm.crypto.grep11.grpc.GenerateAESKey localhost 9876
