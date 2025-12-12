@@ -13,15 +13,19 @@ java -cp "target/classes:$(cat cp.txt)" com.ibm.crypto.grep11.grpc.GetMech local
 java -cp "target/classes:$(cat cp.txt)" com.ibm.crypto.grep11.grpc.GenerateKeyPair
 ```
 
-KeyPairGen + Sign + Verify
+KeyPairGen + Sign + Verify  
 `java -cp "target/classes:$(cat cp.txt)" com.ibm.crypto.grep11.grpc.Example1`
 
 KeyPairGen + wrap + unwrap as required for EFMK.
-public includes the ASN1 + maced
+public includes the ASN1 + maced  
 `java -cp "target/classes:$(cat cp.txt)" com.ibm.crypto.grep11.grpc.Example2`
 
-RSA Key Pair Generation
+RSA Key Pair Generation  
 `java -cp "target/classes:$(cat cp.txt)" com.ibm.crypto.grep11.grpc.GenerateRSAKeyPair`
+
+RSA wrap/unwrap of an AES key for EKMF
+`java -cp "target/classes:$(cat cp.txt)" com.ibm.crypto.grep11.grpc.Example3`
+
 
 # How to Run
 ```

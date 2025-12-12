@@ -47,6 +47,8 @@ public static String toHex(byte[] data) {
     private static final long CKA_PRIVATE   =        0x00000002;
     private static final long CKM_SHA512      =               0x00000270;
     private static final long CKG_MGF1_SHA512 = 0x00000004;
+    private static final long CKM_SHA256      =               0x00000250;
+    private static final long CKG_MGF1_SHA256 = 0x00000002;
 
     // --- GRPC client ---
     private final CryptoGrpc.CryptoBlockingStub client;

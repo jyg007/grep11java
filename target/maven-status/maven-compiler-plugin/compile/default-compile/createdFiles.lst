@@ -28,6 +28,7 @@ com/ibm/crypto/grep11/grpc/GenerateKeyPairRequest$PubKeyTemplateDefaultEntryHold
 com/ibm/crypto/grep11/grpc/ReencryptSingleResponseOrBuilder.class
 com/ibm/crypto/grep11/grpc/GenerateKeyRequestOrBuilder.class
 com/ibm/crypto/grep11/grpc/VerifyRequest$Builder.class
+com/ibm/crypto/grep11/grpc/Example3$1.class
 com/ibm/crypto/grep11/grpc/RSAOAEPParm$Mask$1.class
 com/ibm/crypto/grep11/grpc/MechanismInfo$1.class
 com/ibm/crypto/grep11/grpc/DecryptRequest.class
@@ -45,6 +46,7 @@ com/ibm/crypto/grep11/grpc/VerifyUpdateRequestOrBuilder.class
 com/ibm/crypto/grep11/grpc/SignFinalResponse.class
 com/ibm/crypto/grep11/grpc/SignInitRequest.class
 com/ibm/crypto/grep11/grpc/VerifySingleResponse.class
+com/ibm/crypto/grep11/grpc/Example3.class
 com/ibm/crypto/grep11/grpc/SignFinalRequest$Builder.class
 com/ibm/crypto/grep11/grpc/GetMechanismInfoResponseOrBuilder.class
 com/ibm/crypto/grep11/grpc/DeriveKeyRequestOrBuilder.class
@@ -256,6 +258,7 @@ com/ibm/crypto/grep11/grpc/DecryptInitRequest$1.class
 com/ibm/crypto/grep11/grpc/DecryptInitResponse$Builder.class
 com/ibm/crypto/grep11/grpc/SignSingleRequest$Builder.class
 com/ibm/crypto/grep11/grpc/LogoutRequest.class
+com/ibm/crypto/grep11/grpc/Example3$KeyPairBlob.class
 com/ibm/crypto/grep11/grpc/ECDH1DeriveParm$Builder.class
 com/ibm/crypto/grep11/grpc/GetMechanismListRequestOrBuilder.class
 com/ibm/crypto/grep11/grpc/Grep11Error.class
@@ -272,6 +275,7 @@ com/ibm/crypto/grep11/grpc/MechanismInfo$Builder.class
 com/ibm/crypto/grep11/grpc/DigestKeyRequest.class
 com/ibm/crypto/grep11/grpc/EncryptInitResponse$Builder.class
 com/ibm/crypto/grep11/grpc/GetMechanismInfoRequestOrBuilder.class
+com/ibm/crypto/grep11/grpc/Example3$KeyType.class
 com/ibm/crypto/grep11/grpc/VerifySingleRequest.class
 com/ibm/crypto/grep11/grpc/AttributeValueOrBuilder.class
 com/ibm/crypto/grep11/grpc/Example1$1.class
@@ -347,6 +351,7 @@ com/ibm/crypto/grep11/grpc/KeyBlob$AttributesDefaultEntryHolder.class
 com/ibm/crypto/grep11/grpc/RewrapKeyBlobResponseOrBuilder.class
 com/ibm/crypto/grep11/grpc/DigestKeyResponse$Builder.class
 com/ibm/crypto/grep11/grpc/VerifyRequest$1.class
+com/ibm/crypto/grep11/grpc/Example3$UnwrappedKey.class
 com/ibm/crypto/grep11/grpc/SignUpdateRequest.class
 com/ibm/crypto/grep11/grpc/GetMechanismInfoResponse$1.class
 com/ibm/crypto/grep11/grpc/SetAttributeValueRequestOrBuilder.class

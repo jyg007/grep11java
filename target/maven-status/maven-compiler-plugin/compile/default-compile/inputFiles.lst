@@ -120,6 +120,7 @@
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/GetMechanismInfoResponseOrBuilder.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/RewrapKeyBlobRequestOrBuilder.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/VerifyFinalResponseOrBuilder.java
+/root/java/src/main/java/Example3.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/DigestSingleResponseOrBuilder.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/ECSGParmOrBuilder.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/LoginResponseOrBuilder.java
