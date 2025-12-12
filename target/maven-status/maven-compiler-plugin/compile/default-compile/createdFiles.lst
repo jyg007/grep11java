@@ -10,6 +10,7 @@ com/ibm/crypto/grep11/grpc/DigestUpdateResponse$1.class
 com/ibm/crypto/grep11/grpc/SignFinalRequest.class
 com/ibm/crypto/grep11/grpc/LogoutRequest$Builder.class
 com/ibm/crypto/grep11/grpc/LoginRequest.class
+com/ibm/crypto/grep11/grpc/GenerateRSAKeyPair.class
 com/ibm/crypto/grep11/grpc/AttributeValue$OneAttrCase.class
 com/ibm/crypto/grep11/grpc/KyberKEMParm.class
 com/ibm/crypto/grep11/grpc/UnwrapKeyRequest.class

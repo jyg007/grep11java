@@ -44,6 +44,7 @@
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/DecryptInitRequestOrBuilder.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/DigestUpdateResponseOrBuilder.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/DecryptSingleResponse.java
+/root/java/src/main/java/GenerateRSAKeyPair.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/VerifyInitResponseOrBuilder.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/ReencryptSingleResponseOrBuilder.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/VerifySingleRequestOrBuilder.java
