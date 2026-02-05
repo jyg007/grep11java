@@ -68,7 +68,7 @@ public static String toHex(byte[] data) {
     private static final int CK_IBM_BTC_SLIP0010_MASTERK      =   8;
 
     // --- GRPC client ---
-    private final CryptoGrpc.CryptoBlockingStub client;
+    private static CryptoGrpc.CryptoBlockingStub client;
 
     public Example4(String host, int port) {
         ManagedChannel ch = ManagedChannelBuilder.forAddress(host, port)
@@ -168,7 +168,8 @@ public static class KeyPairBlob {
 
                     // --- Private Key Template ---
                     .putPrivKeyTemplate(CKA_SIGN,        aTF(true))
-                    .putPrivKeyTemplate(CKA_DERIVE,      aTF(true))
+                    .putPrivKeyTemplate(CKA_DERIVE,      aTF(true))						         // REQUIRED IF SLIP10
+                    .putPrivKeyTemplate(CKA_IBM_USE_AS_DATA, AttributeValue.newBuilder().setAttributeTF(true).build())   //REQUIRED IF SLIP10
                     .putPrivKeyTemplate(CKA_EXTRACTABLE, aTF(false))
 
                     .build();
@@ -559,13 +560,24 @@ public DerivedKey slip10DeriveKey(
 	System.out.println("Base Key: " + Example4.toHex(seed.toByteArray()));
 	DerivedKey master = gen.slip10DeriveKey( CK_IBM_BTC_SLIP0010_MASTERK, 0, false, seed, null);
 
-	System.out.println("Master key: " + Example2.toHex(master.key.toByteArray()));
-	System.out.println("Master chaincode: " + Example2.toHex(master.chainCode.toByteArray()));
+	System.out.println("Master key: " + Example4.toHex(master.key.toByteArray()));
+	System.out.println("Master chaincode: " + Example4.toHex(master.chainCode.toByteArray()));
 
 	// Child hardened derivation
 	DerivedKey child = gen.slip10DeriveKey( CK_IBM_BTC_SLIP0010_PRV2PRV, 1, true, master.key, master.chainCode);
-	System.out.println("Child key: " + Example2.toHex(child.key.toByteArray()));
-	System.out.println("Child chaincode: " + Example2.toHex(child.chainCode.toByteArray()));
+	System.out.println("Child key: " + Example4.toHex(child.key.toByteArray()));
+	System.out.println("Child chaincode: " + Example4.toHex(child.chainCode.toByteArray()));
+
+	KeyPairBlob kp = gen.generateKeyPair(KeyType.SECP256K1);
+        GenerateRandomRequest rngRequest = GenerateRandomRequest.newBuilder().setLen(32).build();
+        GenerateRandomResponse rngResponse = client.generateRandom(rngRequest);
+        ByteString chaincode2 = rngResponse.getRnd();
+ 
+        System.out.println("\nchaincode2: " + Example4.toHex(chaincode2.toByteArray())); 
+	DerivedKey child2 = gen.slip10DeriveKey( CK_IBM_BTC_SLIP0010_PRV2PRV, 1, true, kp.priv, chaincode2);
+	System.out.println("Child2 key: " + Example4.toHex(child2.key.toByteArray()));
+	System.out.println("Child2 chaincode: " + Example4.toHex(child2.chainCode.toByteArray()));
+       
 
      };
 }
