@@ -109,6 +109,7 @@
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/EncryptUpdateRequest.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/MechanismInfo.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/DecryptFinalResponseOrBuilder.java
+/root/java/src/main/java/Example4.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/SignInitResponseOrBuilder.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/SignInitRequestOrBuilder.java
 /root/java/src/main/java/generated/com/ibm/crypto/grep11/grpc/GetMechanismInfoRequest.java
