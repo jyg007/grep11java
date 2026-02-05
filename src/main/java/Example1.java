@@ -252,28 +252,32 @@ private  boolean verify(
         .addKeyBlobs(pubKeyBlob)
         .build();
 
+    VerifySingleRequest request = null;
     switch (keyType) {
         case ED25519:
             mech = Mechanism.newBuilder()
                 .setMechanism(CKM_IBM_ED25519_SHA512)
                 .build();
+            request = VerifySingleRequest.newBuilder().setMech(mech).setPubKey(pubKey).setData(data).setSignature(signature).build();
             break;
         case SECP256K1:
             mech = Mechanism.newBuilder()
                 .setMechanism(CKM_ECDSA)
                 .build();
+	    byte[] digest;
+            try {
+	            java.security.MessageDigest md = java.security.MessageDigest.getInstance("SHA-256");
+        	    digest = md.digest(data.toByteArray());
+	    } catch (Exception e) {
+        	    throw new RuntimeException("Failed to compute SHA-256 digest", e);
+            }
+            request = VerifySingleRequest.newBuilder().setMech(mech).setPubKey(pubKey).setData(ByteString.copyFrom(digest)).setSignature(signature).build();
             break;
 
         default:
             throw new RuntimeException("Unsupported key type for verify");
     }
 
-    VerifySingleRequest request = VerifySingleRequest.newBuilder()
-            .setMech(mech)
-            .setPubKey(pubKey)
-            .setData(data)
-            .setSignature(signature)
-            .build();
 
    try {
         VerifySingleResponse response = client.verifySingle(request);
@@ -297,11 +301,11 @@ private  boolean verify(
 
         Example1 gen = new Example1("127.0.0.1", 9876);
 
-        KeyPairBlob kp = gen.generate(KeyType.ED25519);
+        KeyPairBlob kp = gen.generate(KeyType.SECP256K1);
 //        gen.generate(KeyType.SECP256K1);
 //
      byte[] signature = gen.sign(
-	    KeyType.ED25519,
+	    KeyType.SECP256K1,
     		kp.priv,               // privKeyBlob
     		"hello world".getBytes()
 	);  
@@ -311,7 +315,7 @@ private  boolean verify(
         	ByteString.copyFrom(signature),
 	        kp.pub,
     	    ByteString.copyFrom("hello world".getBytes()),
-        	KeyType.ED25519
+        	KeyType.SECP256K1
      	);
 	System.out.println("Is signature valid? " + valid);
      };

@@ -293,7 +293,6 @@ public byte[] sign(KeyType type, ByteString privKeyBlob, byte[] data) throws IOE
     return response.getSignature().toByteArray();
 }
 
-
 private  boolean verify(
         ByteString signature,
         ByteString  pubKeyBlob,
@@ -305,28 +304,32 @@ private  boolean verify(
         .addKeyBlobs(pubKeyBlob)
         .build();
 
+    VerifySingleRequest request = null;
     switch (keyType) {
         case ED25519:
             mech = Mechanism.newBuilder()
                 .setMechanism(CKM_IBM_ED25519_SHA512)
                 .build();
+            request = VerifySingleRequest.newBuilder().setMech(mech).setPubKey(pubKey).setData(data).setSignature(signature).build();
             break;
         case SECP256K1:
             mech = Mechanism.newBuilder()
                 .setMechanism(CKM_ECDSA)
                 .build();
+            byte[] digest;
+            try {
+                    java.security.MessageDigest md = java.security.MessageDigest.getInstance("SHA-256");
+                    digest = md.digest(data.toByteArray());
+            } catch (Exception e) {
+                    throw new RuntimeException("Failed to compute SHA-256 digest", e); 
+            }
+            request = VerifySingleRequest.newBuilder().setMech(mech).setPubKey(pubKey).setData(ByteString.copyFrom(digest)).setSignature(signature).build();
             break;
 
         default:
             throw new RuntimeException("Unsupported key type for verify");
-    }
+    }   
 
-    VerifySingleRequest request = VerifySingleRequest.newBuilder()
-            .setMech(mech)
-            .setPubKey(pubKey)
-            .setData(data)
-            .setSignature(signature)
-            .build();
 
    try {
         VerifySingleResponse response = client.verifySingle(request);
@@ -339,8 +342,9 @@ private  boolean verify(
         }
         // rethrow other gRPC exceptions if needed
         throw e;
-    }
+    }   
 }
+
 
 public String  parseSPKI(ByteString spkiBytes) throws IOException {
         byte[] data = spkiBytes.toByteArray();
